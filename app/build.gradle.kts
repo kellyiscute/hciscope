@@ -12,12 +12,28 @@ android {
         applicationId = "com.kelly.bledebugger"
         minSdk = 26
         targetSdk = 35
-        versionCode = 2
-        versionName = "1.0"
+        // CI passes these from the git tag / run number; local builds use the defaults.
+        versionCode = providers.gradleProperty("versionCode").orNull?.toInt() ?: 2
+        versionName = providers.gradleProperty("versionName").orNull ?: "1.0"
+    }
+
+    // Release signing is configured only in CI, from SIGNING_* environment variables backed by
+    // repository secrets. Local release builds are unsigned.
+    val releaseStoreFile = System.getenv("SIGNING_STORE_FILE")
+    signingConfigs {
+        if (releaseStoreFile != null) {
+            create("release") {
+                storeFile = file(releaseStoreFile)
+                storePassword = System.getenv("SIGNING_STORE_PASSWORD")
+                keyAlias = System.getenv("SIGNING_KEY_ALIAS")
+                keyPassword = System.getenv("SIGNING_KEY_PASSWORD")
+            }
+        }
     }
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.findByName("release")
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }

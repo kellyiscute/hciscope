@@ -28,7 +28,7 @@ HciScope switches on Android's Bluetooth HCI snoop log, reads it as it grows, an
 
 ## Usage
 
-1. Install the APK and open **HciScope**.
+1. Install the APK from [Releases](../../releases) and open **HciScope**.
 2. Tap **Grant access** to give the app Shizuku permission.
 3. Tap **Start capture**. This sets `persist.bluetooth.btsnooplogmode=full` and restarts Bluetooth. Active Bluetooth connections drop briefly.
 4. Use your Bluetooth device as normal; packets stream into the list.
@@ -66,7 +66,17 @@ You need JDK 17 or 21 and the Android SDK (platform 35).
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Or open the project in Android Studio.
+Or open the project in Android Studio. Local release builds are unsigned; signed APKs come from CI.
+
+## Releases
+
+Signed APKs are published on the [Releases](../../releases) page. CI runs `.github/workflows/build.yml` on every push and pull request, then uploads the APK as a workflow artifact. When you push a `v*` tag, it also creates a GitHub Release with the signed APK attached:
+
+```sh
+git tag v1.0.0 && git push origin v1.0.0
+```
+
+Signing uses the repository secrets `SIGNING_KEYSTORE_BASE64`, `SIGNING_STORE_PASSWORD`, `SIGNING_KEY_ALIAS` and `SIGNING_KEY_PASSWORD`.
 
 ## Limitations
 
