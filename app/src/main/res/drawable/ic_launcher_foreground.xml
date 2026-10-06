@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bluetooth rune with packets flowing through it. 108dp canvas, content kept in the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Incoming packets (left) -->
+    <path android:fillColor="#4DD0E1" android:fillAlpha="0.45"
+        android:pathData="M27,51.5h5v5h-5z" />
+    <path android:fillColor="#4DD0E1" android:fillAlpha="0.7"
+        android:pathData="M34.5,51.5h5v5h-5z" />
+    <path android:fillColor="#4DD0E1"
+        android:pathData="M42,51.5h5v5h-5z" />
+
+    <!-- Bluetooth rune (Material "bluetooth" glyph, 24 → 48 units) -->
+    <group android:scaleX="2" android:scaleY="2" android:translateX="30" android:translateY="30">
+        <path android:fillColor="#FFFFFF"
+            android:pathData="M17.71,7.71L12,2h-1v7.59L6.41,5 5,6.41 10.59,12 5,17.59 6.41,19 11,14.41V22h1l5.71,-5.71 -4.3,-4.29 4.3,-4.29zM13,5.83l1.88,1.88L13,9.59V5.83zM14.88,16.29L13,18.17v-3.76l1.88,1.88z" />
+    </group>
+
+    <!-- Outgoing packets (right) -->
+    <path android:fillColor="#4DD0E1"
+        android:pathData="M63,51.5h5v5h-5z" />
+    <path android:fillColor="#4DD0E1" android:fillAlpha="0.7"
+        android:pathData="M70.5,51.5h5v5h-5z" />
+    <path android:fillColor="#4DD0E1" android:fillAlpha="0.45"
+        android:pathData="M78,51.5h5v5h-5z" />
+</vector>
