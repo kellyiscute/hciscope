@@ -119,7 +119,7 @@ fun MainScreen(vm: MainViewModel) {
             TopAppBar(
                 title = {
                     Column {
-                        Text("BLE Debugger")
+                        Text("HciScope")
                         Text(
                             "${packets.size} shown / $total captured",
                             style = MaterialTheme.typography.labelSmall,
