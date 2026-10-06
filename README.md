@@ -89,3 +89,7 @@ Signing uses the repository secrets `SIGNING_KEYSTORE_BASE64`, `SIGNING_STORE_PA
 ## Tech
 
 Kotlin · Jetpack Compose (Material 3) · Coroutines/Flow · AIDL · [Shizuku API](https://github.com/RikkaApps/Shizuku-API)
+
+## License
+
+HciScope is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](LICENSE) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
