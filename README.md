@@ -6,6 +6,13 @@ HciScope switches on Android's Bluetooth HCI snoop log, reads it as it grows, an
 
 <p align="center"><img src="docs/icon.png" width="96" alt="HciScope icon"></p>
 
+<p align="center">
+  <img src="docs/screenshots/main.png" width="260" alt="Live packet list with advertising reports and controller traffic">
+  <img src="docs/screenshots/search.png" width="260" alt="Filtering commands and events by search text">
+  <img src="docs/screenshots/detail.png" width="260" alt="Packet detail sheet with decoded fields and hex dump">
+</p>
+<p align="center"><sub>Live capture · filtering by type and text · per-packet decode and hex dump. Device addresses are partially blurred.</sub></p>
+
 ## Features
 
 - **Live capture:** packets show up a moment after they cross the HCI.
